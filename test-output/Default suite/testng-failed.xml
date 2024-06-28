@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.CartTest">
+      <class name="test.LoginTest">
         <methods>
-          <include name="VerifyByRemovingproductsfromCart"/>
+          <include name="publishReports"/>
+          <include name="verifyIfUserisableToLogin"/>
+          <include name="ConfigureReporting"/>
           <include name="closeNaaptol"/>
           <include name="openApplication"/>
         </methods>
-      </class> <!-- test.CartTest -->
+      </class> <!-- test.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -9,57 +9,65 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ProductResultPage extends BasePage {
-	@FindBy (xpath = "//div[@class='grid_Square ']")private List<WebElement> products;
-	@FindBy (xpath = "//a[@class='bt_compare icon chat quickFancyBox']")private List<WebElement> quickView;
-	@FindBy (xpath = "//div[@class='item_title']//a")private List<WebElement> productTitle;
-	@FindBy (xpath = "//span[@class='offer-price']")private List<WebElement> offerPrice;
-	@FindBy (xpath = "//div[@id='square_Details']//h1")private WebElement productNameOnQuickView;
-	@FindBy (xpath = "//div[@id='square_Details']//span[@class='offer-price']")private WebElement productPriceOnQuickView;
-	@FindBy (xpath = "//div[@id='square_Details']//h1")private WebElement productNamebyClick;
-	@FindBy (xpath = "//div[@id='square_Details']//span[@class='offer-price']")private WebElement productPricebyClick;
-	
+	@FindBy(xpath = "//div[@class='grid_Square ']")
+	private List<WebElement> products;
+	@FindBy(xpath = "//a[@class='bt_compare icon chat quickFancyBox']")
+	private List<WebElement> quickView;
+	@FindBy(xpath = "//div[@class='item_title']//a")
+	private List<WebElement> productTitle;
+	@FindBy(xpath = "//span[@class='offer-price']")
+	private List<WebElement> offerPrice;
+	@FindBy(xpath = "//div[@id='square_Details']//h1")
+	private WebElement productNameOnQuickView;
+	@FindBy(xpath = "//div[@id='square_Details']//span[@class='offer-price']")
+	private WebElement productPriceOnQuickView;
+	@FindBy(xpath = "//div[@id='square_Details']//h1")
+	private WebElement productNamebyClick;
+	@FindBy(xpath = "//div[@id='square_Details']//span[@class='offer-price']")
+	private WebElement productPricebyClick;
+
 	public ProductResultPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	public void moveToDesiredProduct(WebDriver driver, int index) {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(products.get(index));
 		actions.perform();
 	}
-	
+
 	public void selectDesiredProduct(int index) {
 		products.get(index).click();
 	}
-	
+
 	public void clickOnQuickView(int index) {
 		quickView.get(index).click();
 	}
-	
+
 	public String getProductTitle(int index) {
 		return productTitle.get(index).getText();
 	}
-	
+
 	public String getProductPrice(int index) {
 		return offerPrice.get(index).getText();
 	}
-	
+
 	public String getProductNameOnQuickView() {
 		return productNameOnQuickView.getText();
 	}
-	
+
 	public String getProductPriceOnQuickView() {
-	String [] p =	productPriceOnQuickView.getText().split(" ");
-	return p[0];
-	
+		String[] p = productPriceOnQuickView.getText().split(" ");
+		return p[0];
+
 	}
-	 
+
 	public String getProductNamebyClick() {
-	return	productNamebyClick.getText();
+		return productNamebyClick.getText();
 	}
-	
+
 	public String getProductpricebyClick() {
-		String [] R =  productPricebyClick.getText().split(" ");
+		String[] R = productPricebyClick.getText().split(" ");
 		return R[0];
 	}
 

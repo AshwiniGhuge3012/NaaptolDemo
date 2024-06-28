@@ -26,7 +26,6 @@ public class BaseTest {
 	public CartPage cartPage;
 	public LoginPage loginPage;
 	public RegistrationDetailsPage regDetails ;
-	  
 	public   ExtentReports reports;
 	public static ExtentTest  test;
 	   
@@ -37,8 +36,6 @@ public class BaseTest {
 		while(i.hasNext()) {
 		driver.switchTo().window(i.next());
 		}
-		
-		
 	}
 	
 	public void searchProduct(String s) {
@@ -48,11 +45,11 @@ public class BaseTest {
 	}
  
 			
-			
+}			
 	 
 			
 			
 			
 		
 
-	}
+	
